@@ -1,0 +1,33 @@
+<head>
+  <link rel="stylesheet" href="./login.component.css">
+</head>
+
+<body>
+  <div class="background"></div>
+
+  <div class="container">
+    <div class="form">
+      <h1>Bienvenido a ReposDami</h1>
+
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="username">Usuario:</label>
+          <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Contraseña:</label>
+          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+        <h1></h1>
+        <button type="submit" class="btn btn-primary">¿No tienes cuenta?, Registrate :)</button>
+
+        <div *ngIf="isLoggedIn" class="logged-in-message">
+          Se inició sesión correctamente.
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
